@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="YAlfaroProgramacionNCapasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'YAlfaroProgramacionNCapas.dbo.Disco' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Disco">
+          <Property Name="Titulo" Type="varchar" MaxLength="50" />
+          <Property Name="Artista" Type="varchar" MaxLength="50" />
+          <Property Name="GeneroMusical" Type="varchar" MaxLength="50" />
+          <Property Name="Duracion" Type="time" Precision="7" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Distribuidora" Type="varchar" MaxLength="50" />
+          <Property Name="Ventas" Type="int" />
+          <Property Name="Disponibilidad" Type="int" />
+        </EntityType>-->
+        <Function Name="GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="YAlfaroProgramacionNCapasModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YAlfaroProgramacionNCapasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="YAlfaroProgramacionNCapasEntities2" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GetAll" ReturnType="Collection(YAlfaroProgramacionNCapasModel.GetAll_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetAll_Result">
+          <Property Type="String" Name="Titulo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Artista" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GeneroMusical" Nullable="true" MaxLength="50" />
+          <Property Type="Time" Name="Duracion" Nullable="true" />
+          <Property Type="Int32" Name="Año" Nullable="true" />
+          <Property Type="String" Name="Distribuidora" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Ventas" Nullable="true" />
+          <Property Type="Int32" Name="Disponibilidad" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YAlfaroProgramacionNCapasModelStoreContainer" CdmEntityContainer="YAlfaroProgramacionNCapasEntities2" >
+          <FunctionImportMapping FunctionImportName="GetAll" FunctionName="YAlfaroProgramacionNCapasModel.Store.GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="YAlfaroProgramacionNCapasModel.GetAll_Result">
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Artista" ColumnName="Artista" />
+                <ScalarProperty Name="GeneroMusical" ColumnName="GeneroMusical" />
+                <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Distribuidora" ColumnName="Distribuidora" />
+                <ScalarProperty Name="Ventas" ColumnName="Ventas" />
+                <ScalarProperty Name="Disponibilidad" ColumnName="Disponibilidad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
